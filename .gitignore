@@ -1,0 +1,8 @@
+/Library/
+/Builds/
+/Packages/
+/obj/
+/Logs/
+/Temp/
+/.vs/
+/.vscode/
