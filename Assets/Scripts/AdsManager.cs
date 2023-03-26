@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Advertisements;
 
-public class AdsManager : MonoBehaviour , IUnityAdsListener
+public class AdsManager : MonoBehaviour, IUnityAdsListener
 {
 
     public static AdsManager instance;
@@ -63,7 +63,7 @@ public void OnUnityAdsReady(string placementId)
         throw new System.NotImplementedException();
     }
 
-    public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
+   public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
     {
         if(showResult == ShowResult.Finished)
         {
@@ -71,5 +71,4 @@ public void OnUnityAdsReady(string placementId)
         }
         gameManager.instance.reloadLevel();
     }
-
 }

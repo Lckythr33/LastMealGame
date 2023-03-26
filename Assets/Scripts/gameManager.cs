@@ -9,6 +9,7 @@ public class gameManager : MonoBehaviour
     public static gameManager instance; 
     public GameObject gamePlayUI;
     public GameObject menuUI;
+    public GameObject lockOverlay;
     public Text highScoreText;
     public GameObject platformSpawner;
     public Text scoreText;
@@ -18,7 +19,8 @@ public class gameManager : MonoBehaviour
     AudioSource audioSource;
     public AudioClip[] gameAudio; 
     public GameObject skinPanel;
-
+    public GameObject[] locks;
+    int adCounter = 0;
 
 public GameObject RenderMesh;
 private Renderer ren;
@@ -57,6 +59,8 @@ private Material[] mat5;
     // Start is called before the first frame update
     void Start()
     {
+        CheckAdCount();
+
 
         skinPanel.SetActive(false);
 
@@ -77,7 +81,7 @@ mat5 = ren5.materials;
 
 //mat[0].color = Color.red;
 
-    
+  
 if(PlayerPrefs.GetInt("BodyColor") == 1)
     {
         mat[1].color = Color.grey; 
@@ -186,14 +190,40 @@ if(PlayerPrefs.GetInt("TintColor") == 3)
     }
 
 
-
-
         highScore = PlayerPrefs.GetInt("HighScore");
 
-
-        // if(highScore > 50){
-        //     mat[1].color = Color.green;
-        // }
+        if(highScore > 50){
+                locks[0].SetActive(false);
+                locks[1].SetActive(false);
+                locks[2].SetActive(false);
+                locks[3].SetActive(false);
+        }
+        
+        if(highScore > 100){
+                locks[4].SetActive(false);
+                locks[5].SetActive(false);
+                locks[6].SetActive(false);
+                locks[7].SetActive(false);
+        }
+        
+        if(highScore > 200){
+                locks[8].SetActive(false);
+                locks[9].SetActive(false);
+                locks[10].SetActive(false);
+                locks[11].SetActive(false);
+        }
+        if(highScore > 300){
+                locks[12].SetActive(false);
+                locks[13].SetActive(false);
+                locks[14].SetActive(false);
+                locks[15].SetActive(false);
+        }
+        if(highScore > 400){
+                locks[16].SetActive(false);
+                locks[17].SetActive(false);
+                locks[18].SetActive(false);
+                locks[19].SetActive(false);
+        }
         
         // if(highScore > 100){
         //     mat[1].color = Color.blue;
@@ -237,10 +267,28 @@ if(PlayerPrefs.GetInt("TintColor") == 3)
         platformSpawner.SetActive(false);
         StopCoroutine("updateScore");
         saveHighScore();
-        Invoke("reloadLevel",1f);
+        // AdsManager.instance.ShowAd();
+
+    
+
+        //AdsManager.instance.ShowRewardedAd();
+
+
+        if(adCounter >= 6)
+        {
+            adCounter = 0;
+            PlayerPrefs.SetInt("AdCount",0);
+
+            AdsManager.instance.ShowRewardedAd();
+        }
+        else
+        {
+            Invoke("reloadLevel",1f);
+        }
+
     }
 
-    void reloadLevel()
+    public void reloadLevel()
     {
         SceneManager.LoadScene("Game");
     }
@@ -283,6 +331,11 @@ if(PlayerPrefs.GetInt("TintColor") == 3)
     {
         audioSource.PlayOneShot(gameAudio[4], 0.3f); //(which audio, 20% volume)
         score -= 20;
+    }
+    public void bonusScore()
+    {
+        audioSource.PlayOneShot(gameAudio[3], 0.5f); //(which audio, 20% volume)
+        score += 100;
     }
 
 void saveHighScore()
@@ -445,6 +498,27 @@ public void changeTintShade3()
       PlayerPrefs.SetInt("TintColor",3);
 }
 
+void CheckAdCount()
+{
+    if(PlayerPrefs.HasKey("AdCount"))
+    {
+        adCounter = PlayerPrefs.GetInt("AdCount");
+        adCounter++;
+
+        PlayerPrefs.SetInt("AdCount",adCounter);
+    }
+    else
+    {
+        PlayerPrefs.SetInt("AdCount",0);
+    }
+}
+
+// public void unlockSkinOnClick()
+// {
+//     if(highScore > 50){
+//         lockOverlay.SetActive(false);
+// }
+// }
 
 
 }
