@@ -124,7 +124,7 @@ if(PlayerPrefs.GetInt("Speed") == 0)
             else{
             gameManager.instance.collectFood();
             haveFood++;
-            burgerText.text = "Burgers: " + haveFood;
+            burgerText.text = "Meals: " + haveFood;
             Instantiate(pickupEffect,other.transform.position,pickupEffect.transform.rotation);
             other.gameObject.SetActive(false);
             }
@@ -141,7 +141,7 @@ if(PlayerPrefs.GetInt("Speed") == 0)
             gameManager.instance.giveFood();
              Instantiate(giveEffect,other.transform.position,giveEffect.transform.rotation);
             haveFood--;
-            burgerText.text = "Burgers: " + haveFood;
+            burgerText.text = "Meals: " + haveFood;
             }       
             else
             {

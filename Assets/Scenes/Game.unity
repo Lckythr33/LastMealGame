@@ -1395,7 +1395,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Burgers: 0'
+  m_Text: 'Meals: 0'
 --- !u!222 &440545849
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6247,8 +6247,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "The city is falling into Lava\n\nPick up burgers and\ndeliver citizens
-    their \nlast meal order request.\n\nTap to change directions"
+  m_Text: "The city is falling into Lava\n\nPick up meals and\ndeliver citizens their
+    \nlast meal order request.\n\nTap to change directions"
 --- !u!222 &2066717890
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6270,6 +6270,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1331288270, guid: 8155176e03f33f44884efb0dd767197c, type: 3}
+      propertyPath: meshes.Array.size
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 1331288270, guid: 8155176e03f33f44884efb0dd767197c, type: 3}
+      propertyPath: meshes.Array.data[31]
+      value: 
+      objectReference: {fileID: 4300000, guid: 43f925f9cc7d0d2489e4d722bff5b918, type: 3}
+    - target: {fileID: 1331288270, guid: 8155176e03f33f44884efb0dd767197c, type: 3}
+      propertyPath: meshes.Array.data[32]
+      value: 
+      objectReference: {fileID: 4300000, guid: d0f2ab72785049643aa6edc83f32d9ab, type: 3}
     - target: {fileID: 1000011448446114, guid: 8155176e03f33f44884efb0dd767197c, type: 3}
       propertyPath: m_Name
       value: Burger
