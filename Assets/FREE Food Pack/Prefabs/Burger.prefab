@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 23000010489745992}
   - component: {fileID: 3426249363834045191}
   - component: {fileID: 260492525}
+  - component: {fileID: 1331288270}
   m_Layer: 0
   m_Name: Burger
   m_TagString: Food
@@ -30,6 +31,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -53,9 +55,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 0
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -80,9 +85,10 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!95 &3426249363834045191
 Animator:
-  serializedVersion: 3
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -95,6 +101,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -112,3 +119,47 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.06
   m_Center: {x: 0, y: 0.0000000055879354, z: 0}
+--- !u!114 &1331288270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011448446114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a4dc98ffe445f348bcf8bb1caf9e9eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshes:
+  - {fileID: 4300000, guid: 430156879fec00b4c8be6e44eab84172, type: 3}
+  - {fileID: 4300000, guid: 310f9adb29639fa4f926ddbb52461942, type: 3}
+  - {fileID: 4300000, guid: fec7842a9c7504f4c946eb24e095d9f9, type: 3}
+  - {fileID: 4300000, guid: de7b8a9948f1666449e3f75a1abb6f69, type: 3}
+  - {fileID: 4300000, guid: a83ea36fea961a24f9d32eda0adb883d, type: 3}
+  - {fileID: 4300000, guid: 6d05be1b78e41a948b8d50bee67bce65, type: 3}
+  - {fileID: 4300000, guid: 39d0bbd8cb77c27428b7c82b55d16c83, type: 3}
+  - {fileID: 4300000, guid: f2fa079d2ae9ea34c8c51bb4a4342e49, type: 3}
+  - {fileID: 4300000, guid: 30b91b8141924d544a4cc52310773348, type: 3}
+  - {fileID: 4300000, guid: ea0786d988f235b45a488bf2987c7f0a, type: 3}
+  - {fileID: 4300000, guid: 4526a86407f95894b9d00e13d5ebfc70, type: 3}
+  - {fileID: 4300000, guid: 11d1501eed1265f47938feb6a406277a, type: 3}
+  - {fileID: 4300000, guid: 59f24a1b5c71cc24386b59e448df778e, type: 3}
+  - {fileID: 4300000, guid: 1eca6ca9aebee584bad5eae34c02b305, type: 3}
+  - {fileID: 4300000, guid: 19f143b42fa533b4f8eafc373bd587d7, type: 3}
+  - {fileID: 4300000, guid: 6931062aeecbb13438f7ad92ef798679, type: 3}
+  - {fileID: 4300000, guid: cbc0632a540e0284f9af379848b5a661, type: 3}
+  - {fileID: 4300000, guid: bea7c7ba7849e354198461f75527cdc4, type: 3}
+  - {fileID: 4300000, guid: ba6ceeaf951f3f143afe3555f8a977ad, type: 3}
+  - {fileID: 4300000, guid: 548aff7ba0442794b8a03675e59f574c, type: 3}
+  - {fileID: 4300000, guid: 14923c7058afba74482af9e6daa25295, type: 3}
+  - {fileID: 4300000, guid: 82731c4f4b197fb49a6a473836aefbb7, type: 3}
+  - {fileID: 4300000, guid: fec52ddeae99a0745bc188805ff2c7c1, type: 3}
+  - {fileID: 4300002, guid: 6683a92d5ef9b8449a238c88b8f49b2d, type: 3}
+  - {fileID: 4300000, guid: 442120c1ba2d6ac4a9caa291dd678060, type: 3}
+  - {fileID: 4300000, guid: 8cd4586ebadd1934b84fdbadcc9a8072, type: 3}
+  - {fileID: 4300000, guid: 901cc454df4ad724a93940db09be892e, type: 3}
+  - {fileID: 4300000, guid: dfb81c113de903a418d28790ca52dd2b, type: 3}
+  - {fileID: 4300000, guid: cead1578867b39244a74ceeda55bb266, type: 3}
+  - {fileID: 4300000, guid: d769a7102b90c5645a6dfa3efaeafcbb, type: 3}
+  - {fileID: 4300000, guid: 4003a6e41cba6ab4fbe00f575654cdb1, type: 3}
