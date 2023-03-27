@@ -3237,7 +3237,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Burgers: 0'
+  m_Text: 'Meals: 0'
 --- !u!222 &440545849
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11810,19 +11810,18 @@ MonoBehaviour:
   m_Text: 'The city is falling into Lava
 
 
-    Collect Burgers
+    Collect Food
 
 
-    Drop off your
-    customers
+    Drop off your customers
 
-    last meal before they fall
+    last
+    meal before they fall
 
 
     Controls:
 
-    Tap to change
-    directions'
+    Tap to change directions'
 --- !u!222 &2066717890
 CanvasRenderer:
   m_ObjectHideFlags: 0
