@@ -191,6 +191,7 @@ if(PlayerPrefs.GetInt("TintColor") == 3)
 
 
         highScore = PlayerPrefs.GetInt("HighScore");
+        highScoreText.text = "Best Score : " + highScore;
 
         if(highScore > 50){
                 locks[0].SetActive(false);
@@ -232,8 +233,6 @@ if(PlayerPrefs.GetInt("TintColor") == 3)
         //     mat[0].color = Color.black;
         // }
 
-
-        highScoreText.text = "Best Score : " + highScore;
 
     }
 
@@ -311,7 +310,6 @@ if(PlayerPrefs.GetInt("TintColor") == 3)
             // }
         }
 
-       
     }
 
     public void collectFood()
@@ -346,13 +344,14 @@ void saveHighScore()
         if(score > PlayerPrefs.GetInt("HighScore"))
         {
             PlayerPrefs.SetInt("HighScore",score);
+            PlayerPrefs.Save();
         }
     }
     else
     {
         //Playing for the first time
         PlayerPrefs.SetInt("HighScore",score);
-    
+        PlayerPrefs.Save();
     }
 }
 
