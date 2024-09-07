@@ -278,7 +278,7 @@ if(PlayerPrefs.GetInt("TintColor") == 3)
             adCounter = 0;
             PlayerPrefs.SetInt("AdCount",0);
 
-            AdsManager.instance.ShowRewardedAd();
+            //AdsManager.instance.ShowRewardedAd();
         }
         else
         {
