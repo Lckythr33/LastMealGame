@@ -20,7 +20,7 @@ public class gameManager : MonoBehaviour
     public AudioClip[] gameAudio; 
     public GameObject skinPanel;
     public GameObject[] locks;
-    int adCounter = 0;
+    //int adCounter = 0;
 
 public GameObject RenderMesh;
 private Renderer ren;
@@ -59,7 +59,7 @@ private Material[] mat5;
     // Start is called before the first frame update
     void Start()
     {
-        CheckAdCount();
+       // CheckAdCount();
 
 
         skinPanel.SetActive(false);
@@ -266,25 +266,19 @@ if(PlayerPrefs.GetInt("TintColor") == 3)
         platformSpawner.SetActive(false);
         StopCoroutine("updateScore");
         saveHighScore();
+
+        Invoke("reloadLevel",1f);
+
         // AdsManager.instance.ShowAd();
-
-    
-
         //AdsManager.instance.ShowRewardedAd();
-
-
-        if(adCounter >= 6)
-        {
-            adCounter = 0;
-            PlayerPrefs.SetInt("AdCount",0);
-
-            //AdsManager.instance.ShowRewardedAd();
-        }
-        else
-        {
-            Invoke("reloadLevel",1f);
-        }
-
+        // if(adCounter >= 6)
+        // {
+        //     adCounter = 0;
+        //     PlayerPrefs.SetInt("AdCount",0);
+        //     //AdsManager.instance.ShowRewardedAd();
+        // }
+        // else
+        
     }
 
     public void reloadLevel()
@@ -497,20 +491,20 @@ public void changeTintShade3()
       PlayerPrefs.SetInt("TintColor",3);
 }
 
-void CheckAdCount()
-{
-    if(PlayerPrefs.HasKey("AdCount"))
-    {
-        adCounter = PlayerPrefs.GetInt("AdCount");
-        adCounter++;
+// void CheckAdCount()
+// {
+//     if(PlayerPrefs.HasKey("AdCount"))
+//     {
+//         adCounter = PlayerPrefs.GetInt("AdCount");
+//         adCounter++;
 
-        PlayerPrefs.SetInt("AdCount",adCounter);
-    }
-    else
-    {
-        PlayerPrefs.SetInt("AdCount",0);
-    }
-}
+//         PlayerPrefs.SetInt("AdCount",adCounter);
+//     }
+//     else
+//     {
+//         PlayerPrefs.SetInt("AdCount",0);
+//     }
+// }
 
 // public void unlockSkinOnClick()
 // {
